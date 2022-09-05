@@ -13,11 +13,8 @@ jobs:
       - run:
           name: Check node version
           command: node --version
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-      - run:
-          name: Run test
-          command: npm test
+      - node/test
+  
 
 workflows:
   build:
