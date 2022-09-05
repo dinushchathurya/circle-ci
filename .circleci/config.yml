@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  say-hello:
+  build:
     docker:
       - image: cimg/base:stable
     steps:
@@ -8,15 +8,12 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
 workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
   build-workflow:
     jobs:
-      - say-hello
+      - build
   test-workflow:
     jobs:
-      - say-hello
+      - build
   deploy-workflow:
     jobs:
-      - say-hello
+      - build
