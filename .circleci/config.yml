@@ -13,6 +13,8 @@ jobs:
       - run:
           name: Check node version
           command: node --version
+      - node/run:
+          npm-run: build
 
 workflows:
   build:
