@@ -4,9 +4,10 @@ workflows:
   build:
     jobs:
       - build
-    branches:
-      only:
-        - main
+        filters:
+            branches:
+              only:
+                - main
 
 jobs:
   build:
