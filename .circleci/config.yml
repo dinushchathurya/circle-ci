@@ -8,3 +8,7 @@ workflows:
     jobs:
       - node/test:
           version: 14.17.0
+          steps:
+            - checkout
+            - run: npm install
+            - run: npm run test
