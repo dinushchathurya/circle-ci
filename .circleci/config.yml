@@ -5,6 +5,8 @@ orbs:
 
 jobs:
   install-node:
+    docker:
+      - image: 'cimg/base:stable'
     steps:
       - checkout
       - node/install:
@@ -13,6 +15,11 @@ jobs:
       - run:
           name: Check node version
           command: node --version
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
+      - run: sudo npm install -g npm@latest
+      - run: npm run test
       - node/run:
           npm-run: build
 
