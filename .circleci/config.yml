@@ -7,6 +7,9 @@ workflows:
   build:
     jobs:
       - build
+  test:
+    jobs:
+      - test
 
 jobs:
   build:
@@ -24,6 +27,8 @@ jobs:
             key: dependency-cache-{{ checksum "package.json" }}
             paths:
               - ./node_modules
-        - run:
-            name: Run test
-            command: npm test
+  test:
+    steps:
+      - run:
+          name: Run test
+          command: npm test
