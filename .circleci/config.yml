@@ -29,8 +29,8 @@ jobs:
 workflows:
   build:
     jobs:
-      - install-node
+      - build:
           filters:
-                branches:
-                  only:
-                    - with-orbs
+            branches:
+              only:
+                - with-orbs
