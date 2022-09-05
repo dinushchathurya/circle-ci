@@ -12,7 +12,7 @@ jobs:
       - node/install:
           node-version: 14.17.0
           install-yarn: true
-      - run: node -version
+      - run: node --version
 
 workflows:
   test:
