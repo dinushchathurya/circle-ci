@@ -14,8 +14,9 @@ jobs:
           install-yarn: true
       - run: node --version
       - node/test:
-          name: 'Run tests'
-          command: npm test
+          - run:
+              name: Run test
+              command: npm test
 
 workflows:
   test:
