@@ -30,3 +30,7 @@ workflows:
   build:
     jobs:
       - install-node
+          filters:
+                branches:
+                  only:
+                    - with-orbs
