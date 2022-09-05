@@ -21,7 +21,7 @@ jobs:
           command: npm install
       - run:
           name: Check Node version 
-          node --version
+          command: node --version
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
