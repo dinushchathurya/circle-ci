@@ -7,6 +7,12 @@ jobs:
   install-node:
     steps:
       - checkout
+      - node/install:
+          node-version: 14.17.0
+          install-yarn: true
+      - run:
+          name: Check node version
+          command: node --version
       - node/install-packages:
             pkg-manager: npm
       - run:
@@ -19,7 +25,7 @@ jobs:
           root: ~/project
           paths:
             - .
-            
+
 workflows:
   build:
     jobs:
