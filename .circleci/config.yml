@@ -2,14 +2,14 @@ version: 2.1
 
 workflows:
   build:
-    branches:
-        only:
-          - main
     jobs:
       - build
 
 jobs:
   build:
+    branches:
+      only:
+        - main
     docker:
       - image: circleci/node:10.16.0
     steps:
