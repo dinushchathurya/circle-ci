@@ -13,9 +13,8 @@ jobs:
           node-version: 14.17.0
           install-yarn: true
       - run: node --version
-      - run: 
-          command: npm run test
-
+      - node/test:
+          test-results-for: jest
 workflows:
   test:
     jobs:
