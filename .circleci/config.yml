@@ -1,28 +1,10 @@
 version: 2.1
 
-workflows:
-  build:
-    jobs:
-      - build
+orbs: 
+  node: circleci/node@5.0.2 
 
-jobs:
-  build:
-    docker:
-      - image: circleci/node:10.16.0
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install dependencies
-          command: npm install
-      - run:
-          name: Check Node version 
-          command: node --version
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: Run test
-          command: npm test
+workflows:
+  test:
+    jobs:
+      - node/test:
+          version: 14.17.0
