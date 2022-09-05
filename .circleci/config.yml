@@ -15,6 +15,9 @@ jobs:
       - run:
           name: Check node version
           command: node --version
+      - run:
+          name: Run tests
+          command: npm test
 
 workflows:
   build:
