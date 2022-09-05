@@ -2,6 +2,9 @@ version: 2.1
 
 workflows:
   build:
+    branches:
+        only:
+          - main
     jobs:
       - build
 
