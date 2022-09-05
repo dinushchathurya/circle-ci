@@ -13,7 +13,7 @@ jobs:
           node-version: 14.17.0
           install-yarn: true
       - run: node --version
-      - node/test
+      
 workflows:
   test:
     jobs:
