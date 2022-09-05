@@ -13,8 +13,8 @@ jobs:
           node-version: 14.17.0
           install-yarn: true
       - run:
-          name: Run test
-          command: npm test
+          name: Check node version
+          command: node --version
 
 workflows:
   build:
